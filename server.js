@@ -33,7 +33,7 @@ app.get('/screenshot', async (req, res) => {
     try {
 
         const browser = await puppeteer.launch({
-            //executablePath: '/usr/bin/google-chrome-stable',
+            executablePath: '/usr/bin/google-chrome-stable',
             headless: 'new',
             args: [
                 '--autoplay-policy=user-gesture-required',
