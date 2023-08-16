@@ -24,6 +24,10 @@ docker-compose -f compose-dev.yml up
 
 ### Changelogs
 
+### 0.2.0
+
+* added headless chrome
+
 ### 0.1.0
 
 * initial commit

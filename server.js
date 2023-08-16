@@ -33,7 +33,10 @@ app.get('/screenshot', async (req, res) => {
     try {
 
         const browser = await puppeteer.launch({
-            args: ['--no-sandbox']
+            args: [
+                '--no-sandbox',
+                '--disable-gpu'
+            ]
         });
         const page = await browser.newPage();
 
