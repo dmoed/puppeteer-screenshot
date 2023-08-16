@@ -24,6 +24,10 @@ docker-compose -f compose-dev.yml up
 
 ### Changelogs
 
+### 0.2.2
+
+* added minimal args to puppeteer chrome launch
+
 ### 0.2.1
 
 * fixed chrome install
