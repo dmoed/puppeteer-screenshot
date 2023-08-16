@@ -33,9 +33,11 @@ app.get('/screenshot', async (req, res) => {
     try {
 
         const browser = await puppeteer.launch({
+            executablePath: '/usr/bin/google-chrome-stable',
+            headless: 'new',
             args: [
                 '--no-sandbox',
-                '--disable-gpu'
+                '--ignore-certificate-errors',
             ]
         });
         const page = await browser.newPage();
@@ -44,7 +46,7 @@ app.get('/screenshot', async (req, res) => {
         await page.setViewport({width: 1920, height: 1080});
 
         // Open URL in current page
-        await page.goto(site_url, {waitUntil: 'networkidle0'});
+        await page.goto(site_url, {waitUntil: 'load', timeout: 600000});
 
         // Capture screenshot
         let screenshotOptions = {
